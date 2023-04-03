@@ -1,0 +1,39 @@
+{
+  "tuples": [
+    {
+      "username": "John124",
+      "password": "souls",
+      "firstname": "Jon",
+      "lastname": "Moxley",
+      "email": "jonmoxley27617@gmail.com"
+    },
+    {
+      "username": "thegoat88",
+      "password": "14n0lul",
+      "firstname": "Lionel",
+      "lastname": "Messi",
+      "email": "goat@gmail.com"
+    },
+    {
+      "username": "Tethys69",
+      "password": "pdpd",
+      "firstname": "Unil",
+      "lastname": "Kuykendal",
+      "email": "reviverpplz@gmail.com"
+    },
+    {
+      "username": "Duos111",
+      "password": "imlevitating",
+      "firstname": "Dua",
+      "lastname": "Lipa",
+      "email": "plzmarryme@gmail.com"
+    },
+    {
+      "username": "phpistrash",
+      "password": "hoponreact",
+      "firstname": "me",
+      "lastname": "irl",
+      "email": "nodebetter@gmail.com"
+    }
+  ]
+}
