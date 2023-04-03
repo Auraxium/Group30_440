@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "vite",
+    "server": "nodemon server",
     "build": "vite build",
     "preview": "vite preview"
   },

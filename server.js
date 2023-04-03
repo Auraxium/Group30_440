@@ -48,6 +48,7 @@ app.post("/signin", async (req, res) => {
 
   if (!username || !password) return res.status(400).send("fill all fields");
 
+	//username exists
   let result = await query(
     `select * from user where username = '${username}' limit 1`
   ).catch((err) => {
