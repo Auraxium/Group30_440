@@ -10,10 +10,6 @@ import Signup from './components/Signup'
 
 function App() {
 
-	useEffect(() => {
-		axios.get(port + '/connected')
-	}, [])
-
 	return (
 		<Router>
 			<Routes>
