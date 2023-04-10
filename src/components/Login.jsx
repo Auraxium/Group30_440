@@ -15,9 +15,13 @@ export default function Login() {
 
 		let {username, password} = event.target.elements;
 		if(!username.value || !password.value) return setFailed('Fill all fields')
+		let cred = {username: username.value, password: password.value}
 
-		axios.post(port + '/signin', {username: username.value, password: password.value})
-		.then(() => nav('/homepage')).catch(err => setFailed(err.response.data || "unknown error"))
+		axios.post(port + '/signin', cred)
+		.then(() => {
+			localStorage.setItem("login", JSON.stringify(cred))
+			nav('/homepage');
+		}).catch(err => setFailed(err.response.data || "unknown error"))
 	}
 
 	return (
