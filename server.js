@@ -31,10 +31,8 @@ app.get("/reinit", async (req, res) => {
 
 	for (let i = 0; i < init.tuples.length; i++) {
 		const {username, password, firstname, lastname, email} = init.tuples[i];
-
 		let salted = "dfjhg584967y98ehg75498y" + password + "fdsjghiuo54jyi";
 		let hashed = crypto.createHash("sha512").update(salted).digest("hex");
-
 		await query(
 			"INSERT INTO user(username,password,firstName,lastName,email) VALUES ( ?,?,?,?,?)",
 			[username, hashed, firstname, lastname, email]
@@ -45,7 +43,6 @@ app.get("/reinit", async (req, res) => {
 
 app.post("/signin", async (req, res) => {
   let { username, password } = req.body;
-
   if (!username || !password) return res.status(400).send("fill all fields");
 
 	//username exists
@@ -57,10 +54,8 @@ app.post("/signin", async (req, res) => {
 
   if (result.error) return res.staus(500).send("Query failed");
   if (result.length == 0) return res.status(400).send("wrong username or password!");
-
   let salted = "dfjhg584967y98ehg75498y" + password + "fdsjghiuo54jyi";
   let hashed = crypto.createHash("sha512").update(salted).digest("hex");
-
   if (result[0]["password"] != hashed) return res.status(403).send("wrong username or password!");
 
   if (!res.headersSent) res.status(200).send('Signin successful');
@@ -92,7 +87,6 @@ app.post("/signup", async (req, res) => {
 	//hash and store
   let salted = "dfjhg584967y98ehg75498y" + password + "fdsjghiuo54jyi";
   let hashed = crypto.createHash("sha512").update(salted).digest("hex");
-
   await query(
     "INSERT INTO user(username,password,firstName,lastName,email) VALUES ( ?,?,?,?,?)",
     [username, hashed, firstname, lastname, email]
